@@ -32,9 +32,6 @@ include_once 'controller/adverts_controller.php';
             <li class="nav-item">
             <a class="nav-link" aria-current="page" href="consulter.php">Consulter toutes les annonces</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="one.php">Consulter une annonce</a>
-            </li>
         </ul>
     </div>
     </div>
@@ -67,9 +64,9 @@ include_once 'controller/adverts_controller.php';
                     <span class="text-danger"><?=empty($error['postal_code'])?'':$error['postal_code']?></span>
                 </div>
                 <div class="col-5">
-                    <label for="ville" class="form-label">Ville&nbsp;:</label>
-                    <input type="text" name="city" id="ville" class="form-control" value="<?= isset($_GET['update']) ? $adverts['ville'] : "" ?>"/>
-                    <span class="text-danger"><?=empty($error['ville'])?'':$error['ville']?></span>
+                    <label for="city" class="form-label">city&nbsp;:</label>
+                    <input type="text" name="city" id="city" class="form-control" value="<?= isset($_GET['update']) ? $adverts['city'] : "" ?>"/>
+                    <span class="text-danger"><?=empty($error['city'])?'':$error['city']?></span>
                 </div>
                 <fieldset class="row">
                 <div class="col-4 my-2">

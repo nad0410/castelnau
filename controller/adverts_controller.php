@@ -6,7 +6,7 @@ $RX_NAME = '/^[a-zA-ZàâáçéèèêëìîíïôòóùûüÂÊÎÔúÛÄËÏÖ�
 $RX_ZIP ='/^\d{5}$/';
 $adverts = new adverts();
 $advertList = $adverts->getAdvert();
-
+$advertsList = $adverts->getAdverts();
 
 if(isset($_POST['submit']) || isset($_POST['edit'])){  
     if (!empty($_POST['title'])){
@@ -72,11 +72,8 @@ if(isset($_POST['submit']) || isset($_POST['edit'])){
     }else {
         $error['reservation_message'] = "veuillez saisir votre message";
     }
-    var_dump($error);
     if (empty($error)){
-        var_dump('testd');
         if (isset($_POST['submit'])){
-            var_dump('test');
             $adverts->createAdvert();
         }elseif (isset($_POST['edit'])){
             $adverts->id = $_GET['id'];

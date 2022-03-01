@@ -35,11 +35,19 @@ class adverts extends database {
     }
     public function getAdvert(){
         $sqlQuery = 'SELECT id, title, description, postal_code, city, type, price, reservation_message
-                     FROM adverts';
+                     FROM adverts ORDER BY `id` DESC LIMIT 15';
         $statement = $this->db->prepare($sqlQuery);
         $statement->execute();
         return $statement->fetchall(PDO::FETCH_ASSOC);
    }
+   public function getAdverts(){
+    $sqlQuery = 'SELECT id, title, description, postal_code, city, type, price, reservation_message
+                 FROM adverts';
+    $statement = $this->db->prepare($sqlQuery);
+    $statement->execute();
+    return $statement->fetchall(PDO::FETCH_ASSOC);
+}
+
    public function getAdvertsById(){
     $sqlQuery = 'SELECT adverts.id as advertsId, title, description, postal_code, city, type, price, reservation_message
                 FROM adverts';

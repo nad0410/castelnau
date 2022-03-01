@@ -32,16 +32,14 @@ include_once 'controller/adverts_controller.php';
             <li class="nav-item">
             <a class="nav-link" aria-current="page" href="consulter.php">Consulter toutes les annonces</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="one.php">Consulter une annonce</a>
-            </li>
         </ul>
     </div>
     </div>
     </nav>
 </header>
-<h2>Liste des biens</h2>
-    <table class="container" >
+
+        <h2>Liste des biens</h2>
+        <table class="container" >
           <tr>
               <th>id</th>
               <th>title</th>
@@ -51,7 +49,6 @@ include_once 'controller/adverts_controller.php';
               <th>type</th>
               <th>price</th>
               <th>reservation_message</th>
-              <th>ajouter</th>
           </tr>
        
         <?php foreach($advertList as $adverts): ?>
@@ -64,20 +61,9 @@ include_once 'controller/adverts_controller.php';
                 <td><?= $adverts['type']?></td>
                 <td><?= $adverts['price']?></td>
                 <td><?= $adverts['reservation_message']?></td>
-<!-- partie pour parametrer url avec les boutons -->
-                <td><button class="btn btn-success"><a href="?id=<?= $adverts['id']?>&update">Ajouter</a></button></td>
             </tr>
         <?php endforeach; ?>
-    </table>
-
-
-
-
-
-
-
-
-
+        </table>
 </body>
 </html>
 

@@ -32,14 +32,37 @@ include_once 'controller/adverts_controller.php';
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="consulter.php">Consulter toutes les annonces</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="one.php">Consulter une annonce</a>
-            </li>
         </ul>
     </div>
     </div>
     </nav>
 </header>
+<h2>Liste des biens</h2>
+        <table class="container" >
+          <tr>
+              <th>id</th>
+              <th>title</th>
+              <th>description</th>
+              <th>postal_code</th>
+              <th>city</th>
+              <th>type</th>
+              <th>price</th>
+              <th>reservation_message</th>
+          </tr>
+       
+        <?php foreach($advertsList as $adverts): ?>
+            <tr>
+                <td><?= $adverts['id']?></td>
+                <td><?= $adverts['title']?></td>
+                <td><?= $adverts['description']?></td>
+                <td><?= $adverts['postal_code']?></td>
+                <td><?= $adverts['city']?></td>
+                <td><?= $adverts['type']?></td>
+                <td><?= $adverts['price']?></td>
+                <td><?= $adverts['reservation_message']?></td>
+            </tr>
+        <?php endforeach; ?>
+        </table>
 
 </body>
 </html>
